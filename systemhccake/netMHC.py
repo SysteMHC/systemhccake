@@ -33,8 +33,8 @@ class NetMHC(WrappedApp):
         exe = info['NETMHCCONS']
 
 
-        df = pd.read_csv(iprophoutput,sep="\t", header=0)
-        uniqueSeq = df.drop_duplicates(subset=['search_hit'])
+        self.df = pd.read_csv(iprophoutput,sep="\t", header=0)
+        uniqueSeq = self.df.drop_duplicates(subset=['search_hit'])
         pepseq = uniqueSeq['search_hit'].tolist()
         files = pso.writeSeqFilesForMHC(wd , pepseq)
 
@@ -61,9 +61,23 @@ class NetMHC(WrappedApp):
 
     def validate_run(self, log, info, exit_code, stdout):
         check_exitcode(log,exit_code)
-        #print self.outfiles
-        for i in self.outfiles:
-            log.debug(i)
+
+        outputs = []
+
+        for file in self.outfiles:
+            log.debug(file)
+            output2 = pd.read_csv(file, skipinitialspace =True, delimiter=" ", skiprows=range(0,19) + [20], skipfooter=4,engine='python')
+            outputs.append(output2)
+
+        allout = pd.concat(outputs)
+        res = self.df.merge(allout, how='inner', left_on='search_hit', right_on='peptide')
+        respiv = pd.pivot_table(res,index=list(self.df.columns), columns='Allele', values=u'Affinity(nM)')
+
+
+        info['NETMHC_OUT'] = os.path.join(info[Keys.WORKDIR], 'netmhccons.output.csv')
+
+        respiv.to_csv(info['NETMHC_OUT'], sep="\t")
+
         # get all the generated outptuts
         return info
 
