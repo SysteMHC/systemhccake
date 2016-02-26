@@ -1,0 +1,96 @@
+# Method: NetMHCcons
+
+# Input is in PEPTIDE format
+
+# Peptide length 11
+
+# Threshold for Strong binding peptides (IC50)	50.000 nM
+# Threshold for Weak binding peptides (IC50)	500.000 nM
+
+# Threshold for Strong binding peptides (%Rank)	0.5%
+# Threshold for Weak binding peptides (%Rank)	2%
+
+# Allele: HLA-B51:01
+
+# Distance to the nearest neighbour ( HLA-B51:01 ) in the training set: 0.000
+
+# NetMHCcons = NetMHC+NetMHCpan
+
+---------------------------------------------------------------------------------------
+   pos       Allele         peptide         Identity 1-log50k(aff) Affinity(nM)  %Rank   BindingLevel
+---------------------------------------------------------------------------------------
+     0   HLA-B51:01     PEPAKSAPAPK          PEPLIST         0.035     34423.54  50.00  
+     0   HLA-B51:01     LVVPLLLGATL          PEPLIST         0.113     14643.23   7.00  
+     0   HLA-B51:01     VVCKGLKVGID          PEPLIST         0.036     33869.37  50.00  
+     0   HLA-B51:01     KTFKTVEPTGK          PEPLIST         0.041     32259.80  50.00  
+     0   HLA-B51:01     TSASTLPAMTS          PEPLIST         0.055     27426.93  50.00  
+     0   HLA-B51:01     RRGGGVGLRPA          PEPLIST         0.040     32610.74  50.00  
+     0   HLA-B51:01     QSQIAALLQTK          PEPLIST         0.045     30726.73  50.00  
+     0   HLA-B51:01     QPEPLVPPVPK          PEPLIST         0.064     25017.04  32.00  
+     0   HLA-B51:01     VVQTAPGLSSP          PEPLIST         0.046     30232.07  50.00  
+     0   HLA-B51:01     QSPESAPEGED          PEPLIST         0.036     33869.37  50.00  
+     0   HLA-B51:01     GLMDIKPVDWE          PEPLIST         0.039     32787.64  50.00  
+     0   HLA-B51:01     SGRTTGIVMDS          PEPLIST         0.036     33686.63  50.00  
+     0   HLA-B51:01     SEVSSGESSYD          PEPLIST         0.035     34423.54  50.00  
+     0   HLA-B51:01     RIYGESADAVK          PEPLIST         0.039     32787.64  50.00  
+     0   HLA-B51:01     KCDISCLTCNG          PEPLIST         0.036     33869.37  50.00  
+     0   HLA-B51:01     EVSRPIDHDLA          PEPLIST         0.054     27875.69  50.00  
+     0   HLA-B51:01     RAHIWNAAPNN          PEPLIST         0.048     29745.37  50.00  
+     0   HLA-B51:01     QVTEETHIGIH          PEPLIST         0.041     32085.75  50.00  
+     0   HLA-B51:01     QGILGPTGQPG          PEPLIST         0.040     32434.80  50.00  
+     0   HLA-B51:01     TSGAASAELVI          PEPLIST         0.101     16854.80   9.00  
+     0   HLA-B51:01     ITRVSASFGKH          PEPLIST         0.042     31740.46  50.00  
+     0   HLA-B51:01     LQLSEKVSASM          PEPLIST         0.083     20368.33  15.00  
+     0   HLA-B51:01     VLAPEGSVPNK          PEPLIST         0.044     31060.99  50.00  
+     0   HLA-B51:01     VELDVDIEALN          PEPLIST         0.046     30232.07  50.00  
+     0   HLA-B51:01     QEERTKAIEAF          PEPLIST         0.045     30893.41  50.00  
+     0   HLA-B51:01     KASPSPSLSSY          PEPLIST         0.071     23192.26  32.00  
+     0   HLA-B51:01     EAHDAQGDVPV          PEPLIST         0.187      6610.93   2.00  <=WB
+     0   HLA-B51:01     EATAEAEEKQP          PEPLIST         0.041     32085.75  50.00  
+     0   HLA-B51:01     LLSGARTQEVS          PEPLIST         0.043     31569.21  50.00  
+     0   HLA-B51:01     YASGRTTGIVM          PEPLIST         0.154      9396.78   3.00  
+     0   HLA-B51:01     GLALGLGLGLG          PEPLIST         0.037     33504.88  50.00  
+     0   HLA-B51:01     KAVAIKRTPAP          PEPLIST         0.050     29108.61  50.00  
+     0   HLA-B51:01     AGAAEEACRHM          PEPLIST         0.044     31229.48  50.00  
+     0   HLA-B51:01     TKAVAASKERS          PEPLIST         0.037     33686.63  50.00  
+     0   HLA-B51:01     ANGPVAKKAKK          PEPLIST         0.034     34610.27  50.00  
+     0   HLA-B51:01     KQKILLFGCEK          PEPLIST         0.037     33324.12  50.00  
+     0   HLA-B51:01     AGTALPAARPE          PEPLIST         0.033     34986.78  50.00  
+     0   HLA-B51:01     ENDGLSPLNKA          PEPLIST         0.052     28640.00  50.00  
+     0   HLA-B51:01     QKPKVVKGKAE          PEPLIST         0.033     34986.78  50.00  
+     0   HLA-B51:01     LTSGGTAAAPA          PEPLIST         0.070     23444.56  32.00  
+     0   HLA-B51:01     KPYPGYATKQK          PEPLIST         0.079     21269.21  16.00  
+     0   HLA-B51:01     KTESCLSTRKK          PEPLIST         0.035     34053.09  50.00  
+     0   HLA-B51:01     NVTMVVSAGPW          PEPLIST         0.080     21154.46  16.00  
+     0   HLA-B51:01     FDGGLGSGSGQ          PEPLIST         0.037     33504.88  50.00  
+     0   HLA-B51:01     LSAEELAFGDA          PEPLIST         0.067     24349.41  32.00  
+     0   HLA-B51:01     KPGMEQGRLQM          PEPLIST         0.072     22818.90  32.00  
+     0   HLA-B51:01     LQMSIKFANDP          PEPLIST         0.056     27278.95  50.00  
+     0   HLA-B51:01     HTVQTASVAEM          PEPLIST         0.086     19717.81  15.00  
+     0   HLA-B51:01     SRVDLQYINGD          PEPLIST         0.036     33869.37  50.00  
+     0   HLA-B51:01     LHGNQHHPLNP          PEPLIST         0.044     30893.41  50.00  
+     0   HLA-B51:01     GMKCNMQLAIK          PEPLIST         0.036     33869.37  50.00  
+     0   HLA-B51:01     AEIVEGENHTY          PEPLIST         0.045     30726.73  50.00  
+     0   HLA-B51:01     QLVAWAQTVAQ          PEPLIST         0.040     32434.80  50.00  
+     0   HLA-B51:01     SPRSGGASGCS          PEPLIST         0.050     28951.56  50.00  
+     0   HLA-B51:01     KLYGPDVGQPR          PEPLIST         0.042     31912.64  50.00  
+     0   HLA-B51:01     IAGPQPPQTVI          PEPLIST         0.268      2751.98   0.80  <=WB
+     0   HLA-B51:01     LSPPCYFKKHT          PEPLIST         0.050     29108.61  50.00  
+     0   HLA-B51:01     QQIVTEGAIFS          PEPLIST         0.044     31060.99  50.00  
+     0   HLA-B51:01     LARPGSGPLPE          PEPLIST         0.066     24614.30  32.00  
+     0   HLA-B51:01     GSLVTQEAPAQ          PEPLIST         0.039     32787.64  50.00  
+     0   HLA-B51:01     ALRPSTSRSLY          PEPLIST         0.051     28795.36  50.00  
+     0   HLA-B51:01     TKTGQQKKGTT          PEPLIST         0.036     33869.37  50.00  
+     0   HLA-B51:01     GKPCSCYYTGM          PEPLIST         0.044     31229.48  50.00  
+     0   HLA-B51:01     GATSGKAKASA          PEPLIST         0.051     28640.00  50.00  
+     0   HLA-B51:01     VLSLYASGRTT          PEPLIST         0.047     30068.96  50.00  
+     0   HLA-B51:01     RAGGLRSETTF          PEPLIST         0.064     25017.04  32.00  
+     0   HLA-B51:01     FVVTGNEYGIL          PEPLIST         0.083     20478.82  15.00  
+     0   HLA-B51:01     ALATPSLNLIL          PEPLIST         0.058     26694.99  50.00  
+     0   HLA-B51:01     PPRAAVLLVSG          PEPLIST         0.058     26694.99  50.00  
+     0   HLA-B51:01     TYKVTAVPALA          PEPLIST         0.059     26407.71  32.00  
+     0   HLA-B51:01     ILTSVSSLRGT          PEPLIST         0.046     30232.07  50.00  
+     0   HLA-B51:01     TKNLVKIALAL          PEPLIST         0.062     25564.30  32.00  
+---------------------------------------------------------------------------------------
+Number of strong binders: 0 Number of weak binders: 2
+---------------------------------------------------------------------------------------

@@ -1,0 +1,45 @@
+# Method: NetMHCcons
+
+# Input is in PEPTIDE format
+
+# Peptide length 13
+
+# Threshold for Strong binding peptides (IC50)	50.000 nM
+# Threshold for Weak binding peptides (IC50)	500.000 nM
+
+# Threshold for Strong binding peptides (%Rank)	0.5%
+# Threshold for Weak binding peptides (%Rank)	2%
+
+# Allele: HLA-B07:02
+
+# Distance to the nearest neighbour ( HLA-B07:02 ) in the training set: 0.000
+
+# NetMHCcons = NetMHC+NetMHCpan
+
+---------------------------------------------------------------------------------------
+   pos       Allele         peptide         Identity 1-log50k(aff) Affinity(nM)  %Rank   BindingLevel
+---------------------------------------------------------------------------------------
+     0   HLA-B07:02   KAKKAAGAKKAVK          PEPLIST         0.089     19088.05  32.00  
+     0   HLA-B07:02   KSPKKAKAAAKPK          PEPLIST         0.052     28640.00  50.00  
+     0   HLA-B07:02   KKPKKAAGGATPK          PEPLIST         0.048     29906.73  50.00  
+     0   HLA-B07:02   LPKKTESHKAKSK          PEPLIST         0.120     13648.77  15.00  
+     0   HLA-B07:02   KKPKKATGAATPK          PEPLIST         0.049     29425.27  50.00  
+     0   HLA-B07:02   KAKAPKPKAAKPK          PEPLIST         0.084     20040.43  32.00  
+     0   HLA-B07:02   TKAVAASKERSGV          PEPLIST         0.070     23571.74  32.00  
+     0   HLA-B07:02   MATAASSSSLEKS          PEPLIST         0.066     24481.50  32.00  
+     0   HLA-B07:02   SLAALDNHGGDPL          PEPLIST         0.281      2390.89   3.00  
+     0   HLA-B07:02   GGAQGQAIEPLPN          PEPLIST         0.042     31740.46  50.00  
+     0   HLA-B07:02   SLSRCPLTSGLST          PEPLIST         0.101     16854.80  15.00  
+     0   HLA-B07:02   LGGALSLTFVLGL          PEPLIST         0.066     24481.50  32.00  
+     0   HLA-B07:02   AGSPSPQGKVVGN          PEPLIST         0.037     33504.88  50.00  
+     0   HLA-B07:02   GSGGLGGGGPAAA          PEPLIST         0.071     23192.26  32.00  
+     0   HLA-B07:02   VLGGLVGAGAAGY          PEPLIST         0.062     25564.30  50.00  
+     0   HLA-B07:02   IAAAALLPPLSAS          PEPLIST         0.116     14252.45  15.00  
+     0   HLA-B07:02   KVAPPVAHGPALV          PEPLIST         0.221      4600.95   5.00  
+     0   HLA-B07:02   KPKAAKPKPAKAK          PEPLIST         0.189      6504.50   6.00  
+     0   HLA-B07:02   LESAGLGPPAAPA          PEPLIST         0.067     24349.41  32.00  
+     0   HLA-B07:02   QATPEPGSCPVAA          PEPLIST         0.074     22451.54  32.00  
+     0   HLA-B07:02   VALGLLVAPVGWG          PEPLIST         0.045     30726.73  50.00  
+---------------------------------------------------------------------------------------
+Number of strong binders: 0 Number of weak binders: 0
+---------------------------------------------------------------------------------------

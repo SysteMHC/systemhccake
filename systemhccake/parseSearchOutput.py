@@ -1,49 +1,56 @@
-import numpy as np
+import glob
+
 import pandas as pd
 import os
-
-df = pd.read_csv('/home/witold/prog/systeMHC/documentation/input_v2_elife.txt',sep="\t",header=1,skiprows=0)
-
-df.columns
-df.shape
-
-
-for i in df['MHC Allele']:
-    print i.split(',')
-
-os.listdir('/home/witold/prog/systeMHC/documentation')
+from itertools import compress
 
 def mywrite(txt, seq):
     with open(txt,'w') as f:
         for item in seq:
             f.write("%s\n" % item)
 
-print df.head()
-df = pd.read_csv('/home/witold/prog/tests/1602031340/IprohetPepXML2CSV/PBMC1_Tubingen.csv',sep="\t", header=0)
-
-df.drop_duplicates('modified_peptide','assumed_charge').shape
-
-
-
-df.to_csv('peptides.csv' ,columns=[u'search_hit'],index=False,header=False)
-
-
-
-txt = "/home/witold/prog/SysteMHC_Binaries/netMHCcons/netMHCcons-1.1/test/test8.pep"
 
 def maketxtfile(path, stem, extension, peplength):
     filepath = os.path.join(path,"{stem}{peplength}.{extension}".format(stem=stem,peplength=peplength, extension=extension))
     return filepath
 
 
-def extract_peptide_length(peplength, txtfile):
-    df8 = df[df['search_hit'].map(len) == peplength]
-    seq = df8['search_hit'].tolist()
-    seq = set(seq)
-    mywrite(txtfile, seq)
+def extract_peptide_length(pepseq, peplength):
+    idxB = map(lambda x : len(x) == peplength, pepseq)
+    pepseq = list(compress(pepseq,idxB))
+    return pepseq
 
 
-output2 = pd.read_csv('test8.cons.B78.txt', skipinitialspace =True, delimiter=" ", skiprows=range(0,19) + [20], skipfooter=4,engine='python')
+def writeSeqFilesForMHC(path, pepseq):
+    res = []
+    sum = 0
+    for peplength in range(8, 16):
+        newseq = extract_peptide_length(pepseq, peplength)
+        sum += len(newseq)
+        fck = maketxtfile(path,'pep','txt',peplength)
+        mywrite(fck,newseq)
+        res.append(fck)
+    print "{} == {} ".format(sum, len(pepseq))
+    return res
+
+
+
+if __name__ == "__main__":
+
+    df = pd.read_csv('/home/witold/prog/SysteMHC_Data/peptideIDResult/PBMC1_Tubingen.csv',sep="\t", header=0)
+    uniqueSeq = df.drop_duplicates(subset=['search_hit'])
+    pepseq = uniqueSeq['search_hit'].tolist()
+    files=  writeSeqFilesForMHC("./systemhccake/",pepseq)
+
+
+    df.to_csv('peptides.csv' ,columns=[u'search_hit'],index=False,header=False)
+
+
+    txt = "/home/witold/prog/SysteMHC_Binaries/netMHCcons/netMHCcons-1.1/test/test8.pep"
+
+
+
+
 
 
 '''

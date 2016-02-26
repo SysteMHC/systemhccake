@@ -1,0 +1,28 @@
+# Method: NetMHCcons
+
+# Input is in PEPTIDE format
+
+# Peptide length 14
+
+# Threshold for Strong binding peptides (IC50)	50.000 nM
+# Threshold for Weak binding peptides (IC50)	500.000 nM
+
+# Threshold for Strong binding peptides (%Rank)	0.5%
+# Threshold for Weak binding peptides (%Rank)	2%
+
+# Allele: HLA-B51:01
+
+# Distance to the nearest neighbour ( HLA-B51:01 ) in the training set: 0.000
+
+# NetMHCcons = NetMHC+NetMHCpan
+
+---------------------------------------------------------------------------------------
+   pos       Allele         peptide         Identity 1-log50k(aff) Affinity(nM)  %Rank   BindingLevel
+---------------------------------------------------------------------------------------
+     0   HLA-B51:01  KSAPAPKKGSKKAV          PEPLIST         0.064     25152.75  32.00  
+     0   HLA-B51:01  LLEKAEVIAGRMLK          PEPLIST         0.042     31740.46  50.00  
+     0   HLA-B51:01  GAGGLGSPGPVAPA          PEPLIST         0.053     28026.90  50.00  
+     0   HLA-B51:01  TGGPGAPPAPTKGT          PEPLIST         0.040     32434.80  50.00  
+---------------------------------------------------------------------------------------
+Number of strong binders: 0 Number of weak binders: 0
+---------------------------------------------------------------------------------------

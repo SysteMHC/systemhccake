@@ -1,0 +1,202 @@
+# Method: NetMHCcons
+
+# Input is in PEPTIDE format
+
+# Peptide length 10
+
+# Threshold for Strong binding peptides (IC50)	50.000 nM
+# Threshold for Weak binding peptides (IC50)	500.000 nM
+
+# Threshold for Strong binding peptides (%Rank)	0.5%
+# Threshold for Weak binding peptides (%Rank)	2%
+
+# Allele: HLA-A03:01
+
+# Distance to the nearest neighbour ( HLA-A03:01 ) in the training set: 0.000
+
+# NetMHCcons = NetMHC+NetMHCpan
+
+---------------------------------------------------------------------------------------
+   pos       Allele         peptide         Identity 1-log50k(aff) Affinity(nM)  %Rank   BindingLevel
+---------------------------------------------------------------------------------------
+     0   HLA-A03:01      KLKKTETQEK          PEPLIST         0.489       250.51   1.50  <=WB
+     0   HLA-A03:01      GTAAKSITKK          PEPLIST         0.573       101.50   0.80  <=WB
+     0   HLA-A03:01      KAPRKQLATK          PEPLIST         0.347      1170.65   3.00  
+     0   HLA-A03:01      KVYTKSSHLK          PEPLIST         0.812         7.65   0.01  <=SB
+     0   HLA-A03:01      RTDGHTLSEK          PEPLIST         0.564       112.49   0.80  <=WB
+     0   HLA-A03:01      SLRHKPAVSK          PEPLIST         0.651        43.65   0.25  <=SB
+     0   HLA-A03:01      KVFGGTVHKK          PEPLIST         0.724        19.81   0.05  <=SB
+     0   HLA-A03:01      RVKLPSGSKK          PEPLIST         0.629        55.08   0.30  <=SB
+     0   HLA-A03:01      RTKKVGIVGK          PEPLIST         0.569       106.56   0.80  <=WB
+     0   HLA-A03:01      QAGVLGKPKK          PEPLIST         0.144     10527.33   8.00  
+     0   HLA-A03:01      KTIDASVSKK          PEPLIST         0.625        57.82   0.40  <=SB
+     0   HLA-A03:01      GATAVVPIRE          PEPLIST         0.042     31912.64  50.00  
+     0   HLA-A03:01      KIIENNTASK          PEPLIST         0.583        90.60   0.80  <=WB
+     0   HLA-A03:01      TEQDSKDSTY          PEPLIST         0.035     34237.82  50.00  
+     0   HLA-A03:01      GSYSSHISSK          PEPLIST         0.724        19.81   0.05  <=SB
+     0   HLA-A03:01      VVSKRGVAVS          PEPLIST         0.067     24349.41  32.00  
+     0   HLA-A03:01      GLTALQLAAA          PEPLIST         0.075     22209.93  32.00  
+     0   HLA-A03:01      HVKDANGNSF          PEPLIST         0.053     28178.94  50.00  
+     0   HLA-A03:01      HVQPDDIGAH          PEPLIST         0.084     20149.14  32.00  
+     0   HLA-A03:01      GTPESVQSAK          PEPLIST         0.320      1576.34   3.00  
+     0   HLA-A03:01      KVFDAKPSAK          PEPLIST         0.702        25.00   0.10  <=SB
+     0   HLA-A03:01      KVKNLSASFP          PEPLIST         0.108     15541.08  15.00  
+     0   HLA-A03:01      KVDGRVVEPK          PEPLIST         0.505       211.83   1.00  <=WB
+     0   HLA-A03:01      AEDKENYKKF          PEPLIST         0.027     37535.94  50.00  
+     0   HLA-A03:01      KKLVGNNEKK          PEPLIST         0.093     18279.56  16.00  
+     0   HLA-A03:01      TQALRVTLKQ          PEPLIST         0.066     24614.30  32.00  
+     0   HLA-A03:01      ATNDSVVADK          PEPLIST         0.493       239.90   1.50  <=WB
+     0   HLA-A03:01      TGKWAKSHEQ          PEPLIST         0.029     36337.11  50.00  
+     0   HLA-A03:01      QGQLCATLKK          PEPLIST         0.174      7609.38   7.00  
+     0   HLA-A03:01      VRSGGDHEPK          PEPLIST         0.082     20478.82  32.00  
+     0   HLA-A03:01      KLLDDPSKQK          PEPLIST         0.552       127.39   0.80  <=WB
+     0   HLA-A03:01      GPAEPAVAGP          PEPLIST         0.026     37739.56  50.00  
+     0   HLA-A03:01      ATYHGSFSTK          PEPLIST         0.784        10.41   0.01  <=SB
+     0   HLA-A03:01      LVTFQGSATA          PEPLIST         0.064     25017.04  50.00  
+     0   HLA-A03:01      SPVLAIDCYL          PEPLIST         0.033     34986.78  50.00  
+     0   HLA-A03:01      KGDSITVKAK          PEPLIST         0.184      6792.19   6.00  
+     0   HLA-A03:01      KVIPAVSISY          PEPLIST         0.536       150.65   0.80  <=WB
+     0   HLA-A03:01      LNPSFLGIAL          PEPLIST         0.043     31569.21  50.00  
+     0   HLA-A03:01      LASNGKLLAA          PEPLIST         0.072     22818.90  32.00  
+     0   HLA-A03:01      AAMGLQRAVK          PEPLIST         0.444       409.85   1.50  <=WB
+     0   HLA-A03:01      AKSTLLQVLQ          PEPLIST         0.036     33869.37  50.00  
+     0   HLA-A03:01      GPQGSATALD          PEPLIST         0.026     37739.56  50.00  
+     0   HLA-A03:01      CICLSKAVGY          PEPLIST         0.214      4936.17   5.00  
+     0   HLA-A03:01      ETRPAGDRTF          PEPLIST         0.034     34423.54  50.00  
+     0   HLA-A03:01      IPFSGKPDPV          PEPLIST         0.037     33324.12  50.00  
+     0   HLA-A03:01      AVASFPKKQE          PEPLIST         0.051     28795.36  50.00  
+     0   HLA-A03:01      QSDGTWSNHN          PEPLIST         0.029     36534.22  50.00  
+     0   HLA-A03:01      AVNAHSNILK          PEPLIST         0.671        35.15   0.17  <=SB
+     0   HLA-A03:01      AEKAVTKEEF          PEPLIST         0.028     37132.00  50.00  
+     0   HLA-A03:01      AGALDVPHAE          PEPLIST         0.029     36337.11  50.00  
+     0   HLA-A03:01      GAVGPDAALV          PEPLIST         0.046     30232.07  50.00  
+     0   HLA-A03:01      KVAPAPAVVK          PEPLIST         0.615        64.78   0.40  <=SB
+     0   HLA-A03:01      ALKNPPINTK          PEPLIST         0.624        58.45   0.40  <=SB
+     0   HLA-A03:01      DAGTRPSGSR          PEPLIST         0.060     26123.53  50.00  
+     0   HLA-A03:01      KTFEGNLTTK          PEPLIST         0.685        30.21   0.12  <=SB
+     0   HLA-A03:01      ATALPTGTSK          PEPLIST         0.610        68.01   0.40  <=SB
+     0   HLA-A03:01      EADVHGKPLP          PEPLIST         0.028     37132.00  50.00  
+     0   HLA-A03:01      GEDVETSKKW          PEPLIST         0.023     38984.65  50.00  
+     0   HLA-A03:01      WKKSTEVDEG          PEPLIST         0.019     40489.28  50.00  
+     0   HLA-A03:01      SLLSGVVQAL          PEPLIST         0.098     17316.93  15.00  
+     0   HLA-A03:01      KTKEVIGTGY          PEPLIST         0.369       917.70   3.00  
+     0   HLA-A03:01      TKVKDGKSLP          PEPLIST         0.025     38150.11  50.00  
+     0   HLA-A03:01      VSAHSGMNTP          PEPLIST         0.049     29584.89  50.00  
+     0   HLA-A03:01      APESLAQQQL          PEPLIST         0.027     37132.00  50.00  
+     0   HLA-A03:01      EEVHDLERKY          PEPLIST         0.026     37535.94  50.00  
+     0   HLA-A03:01      VTNKSQIRTW          PEPLIST         0.062     25564.30  50.00  
+     0   HLA-A03:01      EKSAMVEDLS          PEPLIST         0.023     38984.65  50.00  
+     0   HLA-A03:01      GFGVSHVADA          PEPLIST         0.033     34986.78  50.00  
+     0   HLA-A03:01      VQASKGCKAD          PEPLIST         0.029     36534.22  50.00  
+     0   HLA-A03:01      ETRPAGDGTF          PEPLIST         0.037     33504.88  50.00  
+     0   HLA-A03:01      SVNDGKQASW          PEPLIST         0.060     25982.58  50.00  
+     0   HLA-A03:01      GACQEAFPSR          PEPLIST         0.106     15881.05  15.00  
+     0   HLA-A03:01      EAEAAGWEPG          PEPLIST         0.023     38984.65  50.00  
+     0   HLA-A03:01      LDLLDMKKME          PEPLIST         0.023     38984.65  50.00  
+     0   HLA-A03:01      FEEHNSMNEL          PEPLIST         0.027     37333.42  50.00  
+     0   HLA-A03:01      YASGRTTGIV          PEPLIST         0.057     26985.39  50.00  
+     0   HLA-A03:01      EVNDIKTRSW          PEPLIST         0.038     33144.32  50.00  
+     0   HLA-A03:01      LGYPGVVNPG          PEPLIST         0.044     30893.41  50.00  
+     0   HLA-A03:01      TSSKPDPSQW          PEPLIST         0.046     30396.07  50.00  
+     0   HLA-A03:01      GLQEALSARI          PEPLIST         0.062     25426.37  50.00  
+     0   HLA-A03:01      AEALPMDLPA          PEPLIST         0.035     34053.09  50.00  
+     0   HLA-A03:01      SASSPPATSK          PEPLIST         0.458       354.15   1.50  <=WB
+     0   HLA-A03:01      TKVLSDDDLL          PEPLIST         0.025     38150.11  50.00  
+     0   HLA-A03:01      TAGLQSAICR          PEPLIST         0.104     16228.45  15.00  
+     0   HLA-A03:01      SVSEHQPTTW          PEPLIST         0.065     24747.82  32.00  
+     0   HLA-A03:01      AIQNPTMINK          PEPLIST         0.655        42.02   0.25  <=SB
+     0   HLA-A03:01      LGLPAAACPY          PEPLIST         0.101     16763.86  15.00  
+     0   HLA-A03:01      QQMGPMIDEK          PEPLIST         0.363       984.56   3.00  
+     0   HLA-A03:01      RAPRDLLGCP          PEPLIST         0.034     34610.27  50.00  
+     0   HLA-A03:01      KEKEMVGALV          PEPLIST         0.048     29906.73  50.00  
+     0   HLA-A03:01      IHPLAGAALK          PEPLIST         0.105     16140.90  15.00  
+     0   HLA-A03:01      GSGGLIGLMK          PEPLIST         0.464       330.10   1.50  <=WB
+     0   HLA-A03:01      EVLTSKGDAW          PEPLIST         0.032     35559.24  50.00  
+     0   HLA-A03:01      YSHPAPPLAW          PEPLIST         0.072     22942.68  32.00  
+     0   HLA-A03:01      AVNPRDPPSW          PEPLIST         0.071     23318.07  32.00  
+     0   HLA-A03:01      VHNTGVMVLE          PEPLIST         0.041     31912.64  50.00  
+     0   HLA-A03:01      NSISFSKNAF          PEPLIST         0.042     31912.64  50.00  
+     0   HLA-A03:01      SDCGMLKSSF          PEPLIST         0.032     35559.24  50.00  
+     0   HLA-A03:01      EITESGRIGF          PEPLIST         0.040     32434.80  50.00  
+     0   HLA-A03:01      ASRIASLTGS          PEPLIST         0.075     22209.93  32.00  
+     0   HLA-A03:01      SKQRYTGGVS          PEPLIST         0.028     36931.66  50.00  
+     0   HLA-A03:01      LSGLCIVKVS          PEPLIST         0.037     33324.12  50.00  
+     0   HLA-A03:01      PPRPARGSRL          PEPLIST         0.029     36534.22  50.00  
+     0   HLA-A03:01      HVAPILRVAM          PEPLIST         0.096     17695.75  16.00  
+     0   HLA-A03:01      KSKDKNIVSA          PEPLIST         0.076     21970.92  32.00  
+     0   HLA-A03:01      IVPALNSRQM          PEPLIST         0.052     28485.48  50.00  
+     0   HLA-A03:01      IEKKKHMAIP          PEPLIST         0.030     35946.07  50.00  
+     0   HLA-A03:01      VVQAKLAKNY          PEPLIST         0.194      6128.72   6.00  
+     0   HLA-A03:01      STPSRPSSAK          PEPLIST         0.518       184.04   1.00  <=WB
+     0   HLA-A03:01      KVSKASGVSK          PEPLIST         0.619        61.70   0.40  <=SB
+     0   HLA-A03:01      KEQTETKKLK          PEPLIST         0.077     21734.48  32.00  
+     0   HLA-A03:01      PCHHPCQAVV          PEPLIST         0.027     37132.00  50.00  
+     0   HLA-A03:01      KAKTGAAGKF          PEPLIST         0.061     25842.40  50.00  
+     0   HLA-A03:01      SVNIKGGTSR          PEPLIST         0.276      2510.18   4.00  
+     0   HLA-A03:01      RTYDGDGYKK          PEPLIST         0.639        49.70   0.30  <=SB
+     0   HLA-A03:01      LPGLCIHCSL          PEPLIST         0.034     34798.02  50.00  
+     0   HLA-A03:01      APSRGLIDPQ          PEPLIST         0.029     36534.22  50.00  
+     0   HLA-A03:01      KAIVNRIAQK          PEPLIST         0.482       271.69   1.50  <=WB
+     0   HLA-A03:01      KARGATGSFK          PEPLIST         0.623        58.77   0.40  <=SB
+     0   HLA-A03:01      VLAPKIHEGD          PEPLIST         0.047     30068.96  50.00  
+     0   HLA-A03:01      KNKHKKMKKK          PEPLIST         0.145     10357.86   8.00  
+     0   HLA-A03:01      PELSAEPGAG          PEPLIST         0.021     40053.56  50.00  
+     0   HLA-A03:01      ATDGKVFSIS          PEPLIST         0.061     25702.97  50.00  
+     0   HLA-A03:01      HTYLANGQTK          PEPLIST         0.635        52.18   0.30  <=SB
+     0   HLA-A03:01      RVASPTSGVK          PEPLIST         0.676        33.12   0.15  <=SB
+     0   HLA-A03:01      LKCAGSSMFL          PEPLIST         0.052     28640.00  50.00  
+     0   HLA-A03:01      KNHVATCLCD          PEPLIST         0.038     32965.50  50.00  
+     0   HLA-A03:01      TVTESTTEIT          PEPLIST         0.037     33686.63  50.00  
+     0   HLA-A03:01      GAPFVLLMLL          PEPLIST         0.083     20258.44  32.00  
+     0   HLA-A03:01      HAGGGVHIEP          PEPLIST         0.038     32965.50  50.00  
+     0   HLA-A03:01      LGSDSVTVDP          PEPLIST         0.030     35946.07  50.00  
+     0   HLA-A03:01      PCLCLGTVPD          PEPLIST         0.024     38774.32  50.00  
+     0   HLA-A03:01      VSVPVFSQVP          PEPLIST         0.043     31229.48  50.00  
+     0   HLA-A03:01      KGEEEPLVAS          PEPLIST         0.030     36141.06  50.00  
+     0   HLA-A03:01      FPADSPQYES          PEPLIST         0.026     37944.28  50.00  
+     0   HLA-A03:01      SLQAFEEKLS          PEPLIST         0.050     29108.61  50.00  
+     0   HLA-A03:01      SARRGVGDYR          PEPLIST         0.180      7131.08   6.00  
+     0   HLA-A03:01      SSSPLHLQPP          PEPLIST         0.055     27575.71  50.00  
+     0   HLA-A03:01      HGSGTCGPTP          PEPLIST         0.033     35176.57  50.00  
+     0   HLA-A03:01      KEEVFALKDG          PEPLIST         0.024     38565.12  50.00  
+     0   HLA-A03:01      QESYSDMSSQ          PEPLIST         0.028     37132.00  50.00  
+     0   HLA-A03:01      VLSPADKTNV          PEPLIST         0.068     24087.38  32.00  
+     0   HLA-A03:01      KEAVHVTVPD          PEPLIST         0.034     34798.02  50.00  
+     0   HLA-A03:01      EATLGCGALR          PEPLIST         0.074     22573.33  32.00  
+     0   HLA-A03:01      TAAQITQRKW          PEPLIST         0.040     32434.80  50.00  
+     0   HLA-A03:01      KQNIVISSGF          PEPLIST         0.101     16854.80  15.00  
+     0   HLA-A03:01      RVLLPTGNQR          PEPLIST         0.404       628.40   2.00  <=WB
+     0   HLA-A03:01      TDAEAVSTRW          PEPLIST         0.030     36141.06  50.00  
+     0   HLA-A03:01      ISHVGNEHPI          PEPLIST         0.050     29266.51  50.00  
+     0   HLA-A03:01      AEIDARNDSF          PEPLIST         0.029     36534.22  50.00  
+     0   HLA-A03:01      RLAPPSLAQQ          PEPLIST         0.172      7818.02   7.00  
+     0   HLA-A03:01      HEIESAGQTW          PEPLIST         0.029     36534.22  50.00  
+     0   HLA-A03:01      KVVEGSFVYK          PEPLIST         0.663        38.12   0.20  <=SB
+     0   HLA-A03:01      HVGPATEASW          PEPLIST         0.049     29584.89  50.00  
+     0   HLA-A03:01      PRPRPSTCLA          PEPLIST         0.025     38150.11  50.00  
+     0   HLA-A03:01      DIRKDLYANT          PEPLIST         0.029     36534.22  50.00  
+     0   HLA-A03:01      KGGSSVQFTY          PEPLIST         0.139     11112.54   9.00  
+     0   HLA-A03:01      QVGGGAPQPG          PEPLIST         0.034     34798.02  50.00  
+     0   HLA-A03:01      SSFGRSAGML          PEPLIST         0.105     15967.20  15.00  
+     0   HLA-A03:01      DVRMTSPPDY          PEPLIST         0.088     19191.60  32.00  
+     0   HLA-A03:01      EVEVGDRTSW          PEPLIST         0.027     37333.42  50.00  
+     0   HLA-A03:01      KMEGKNNVIV          PEPLIST         0.073     22695.78  32.00  
+     0   HLA-A03:01      AEIPDHSKAF          PEPLIST         0.034     34798.02  50.00  
+     0   HLA-A03:01      SKNIIQPPSC          PEPLIST         0.029     36732.40  50.00  
+     0   HLA-A03:01      DVPAHLQNSW          PEPLIST         0.030     36337.11  50.00  
+     0   HLA-A03:01      LLALLAGGAL          PEPLIST         0.069     23699.60  32.00  
+     0   HLA-A03:01      LVRQAEKMGY          PEPLIST         0.232      4062.65   5.00  
+     0   HLA-A03:01      EVISQHLVSY          PEPLIST         0.184      6792.19   6.00  
+     0   HLA-A03:01      EVFDKDLSKL          PEPLIST         0.048     29906.73  50.00  
+     0   HLA-A03:01      EVIDGVPGKW          PEPLIST         0.037     33504.88  50.00  
+     0   HLA-A03:01      EVVSEPFRSF          PEPLIST         0.040     32434.80  50.00  
+     0   HLA-A03:01      VEEIIPAARV          PEPLIST         0.030     36141.06  50.00  
+     0   HLA-A03:01      VGQLSNIITF          PEPLIST         0.040     32434.80  50.00  
+     0   HLA-A03:01      VTAVDTKRGV          PEPLIST         0.052     28640.00  50.00  
+     0   HLA-A03:01      ELKARISASA          PEPLIST         0.059     26407.71  50.00  
+     0   HLA-A03:01      VQVVVDPKPV          PEPLIST         0.040     32610.74  50.00  
+     0   HLA-A03:01      RVAALLYIGS          PEPLIST         0.148     10136.12   8.00  
+     0   HLA-A03:01      TPKVAIIQTY          PEPLIST         0.051     28640.00  50.00  
+---------------------------------------------------------------------------------------
+Number of strong binders: 20 Number of weak binders: 15
+---------------------------------------------------------------------------------------
