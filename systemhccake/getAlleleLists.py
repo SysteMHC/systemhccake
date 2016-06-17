@@ -4,16 +4,13 @@ import re
 
 class AlleleList:
 
-    def __init__(self, dirNetMHC='/home/witold/prog/SysteMHC_Binaries/netMHC/netMHC-3.4/etc/net',
-                 dirNetPan='/home/witold/prog/SysteMHC_Binaries/netMHCpan/netMHCpan-2.8/data/MHC_pseudo.dat'
+    def __init__(self, dirNetMHC='{}/SysteMHC_Binaries/netMHC/netMHC-3.4/etc/net'.format(os.environ.get('SYSTEMHC')),
+                 dirNetPan='{}/SysteMHC_Binaries/netMHCpan/netMHCpan-2.8/data/MHC_pseudo.dat'.format(os.environ.get('SYSTEMHC'))
     ):
         self.mhcAlleles =[]
         self.netMHCalleles = os.listdir(dirNetMHC)
         df = pd.read_csv(dirNetPan,delimiter=r"\s+", header=None)
         self.netPanalleles= list(set(df[0].tolist()))
-
-    #all = ['A03', 'A24', 'B07', 'B51']
-
 
     @staticmethod
     def findAllS(alleles, netAll, prefix = "HLA-"):

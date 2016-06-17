@@ -11,5 +11,5 @@ setup(
     license="BSD",
     packages=find_packages(),
     url='https://github.com/systemhc/systemhc',
-    install_requires=['Unimod','applicake', 'pyteomics', 'ruffus', 'configobj', 'searcake']
+    install_requires=['Unimod','applicake', 'pyteomics', 'ruffus', 'configobj']
 )

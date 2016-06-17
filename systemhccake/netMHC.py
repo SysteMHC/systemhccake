@@ -1,37 +1,32 @@
 from applicake.base.app import WrappedApp
-#from applicake.base.apputils import validation
 from applicake.base.coreutils.arguments import Argument
 from applicake.base.coreutils.keys import Keys, KeyHelp
 import pandas as pd
 from applicake.base.apputils.validation import check_exitcode, check_xml
-
 import parseSearchOutput as pso
 import getAlleleLists as gal
-
 import os
 import sys
 
 
-
-
 class NetMHC(WrappedApp):
     outfiles=[]
-
     def add_args(self):
         return [
-            Argument("NETMHCCONS",  KeyHelp.EXECDIR, default='/home/witold/prog/SysteMHC_Binaries/netMHCcons/netMHCcons-1.1/netMHCcons'),
-            Argument("ALLELE_LIST", 'list of alleles', default=''),
             Argument(Keys.WORKDIR, KeyHelp.WORKDIR),
-            Argument('IPROPHETOUTPUT', 'Table with ids', default=''),
+            Argument("NETMHCCONS",
+                     KeyHelp.EXECDIR,
+                     default='{}/SysteMHC_Binaries/netMHCcons/netMHCcons-1.1/netMHCcons'.format(os.environ.get('SYSTEMHC'))),
+            Argument("ALLELE_LIST", 'list of alleles', default=''),
+            Argument('PEPCSV', 'Table with ids', default=''),
         ]
 
     def prepare_run(self, log, info):
         wd = info[Keys.WORKDIR]
 
-        iprophoutput = info['IPROPHETOUTPUT']
+        iprophoutput = info['PEPCSV']
         alleles = info['ALLELE_LIST']
         exe = info['NETMHCCONS']
-
 
         self.df = pd.read_csv(iprophoutput,sep="\t", header=0)
         uniqueSeq = self.df.drop_duplicates(subset=['search_hit'])
@@ -39,11 +34,8 @@ class NetMHC(WrappedApp):
         files = pso.writeSeqFilesForMHC(wd , pepseq)
 
         alllist = gal.AlleleList()
-        alleles = alleles.split(",")
         supportedalleles = alllist.findAll(alleles)
 
-        #./netMHCcons/netMHCcons-1.1/netMHCcons -inptype 1 -a HLA-B78:07 -f /home/witold/prog/SysteMHC_Binaries/netMHCcons/netMHCcons-1.1/test/test8.pep
-        #./netMHCcons/netMHCcons-1.1/netMHCcons -inptype 1 -a HLA-B78:07 -f ./netMHCcons/netMHCcons-1.1/test/test2.pep > ./netMHCcons/netMHCcons-1.1/test/test2.pep.myout
         commands  = []
         for file in files:
             for allel in supportedalleles:
@@ -83,7 +75,5 @@ class NetMHC(WrappedApp):
 
 
 if __name__ == "__main__":
-    sys.argv = ['--ALLELE_LIST', 'A03,A24,B07,B51', '--IPROPHETOUTPUT', '/home/witold/prog/SysteMHC_Data/peptideIDResult/PBMC1_Tubingen.csv']
-    #sys.argv = ['--ALLELE_LIST', 'A03', '--IPROPHETOUTPUT', '/home/witold/prog/SysteMHC_Data/peptideIDResult/PBMC1_Tubingen.csv']
-
+    sys.argv = ['--ALLELE_LIST', 'A03,A24,B07,B51', '--PEPCSV', '/home/systemhc/prog/systemhccake/tests/PBMC1_Tubingen.csv']
     NetMHC.main()

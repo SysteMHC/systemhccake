@@ -37,7 +37,7 @@ def writeSeqFilesForMHC(path, pepseq):
 
 if __name__ == "__main__":
 
-    df = pd.read_csv('/home/witold/prog/SysteMHC_Data/peptideIDResult/PBMC1_Tubingen.csv',sep="\t", header=0)
+    df = pd.read_csv('/home/systemhc/prog/SysteMHC_Data/peptideIDResult/PBMC1_Tubingen.csv',sep="\t", header=0)
     uniqueSeq = df.drop_duplicates(subset=['search_hit'])
     pepseq = uniqueSeq['search_hit'].tolist()
     files=  writeSeqFilesForMHC("./systemhccake/",pepseq)
