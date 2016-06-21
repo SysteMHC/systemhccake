@@ -1,8 +1,37 @@
-import glob
-
 import pandas as pd
 import os
+import getAlleleLists as gal
+
 from itertools import compress
+
+
+
+
+def fixallele(alleles):
+    '''fix allele names'''
+    if type(alleles) is not list:
+        alleles = alleles.split(',')
+    if type(alleles) is not list:
+        alleles = list(alleles)
+    return alleles
+
+
+def annotation_score(row):
+    ''' get annotation score '''
+    row = list(row)
+    idx = row.index(min(row))
+
+    row.sort()
+    score = row[1] / row[0]
+    return round(score)
+
+
+def getmin_allele(row):
+    ''' get allele name with smallest binding concentrations '''
+    tmp = list(row)
+    idx = tmp.index(min(tmp))
+    return ((row.axes[0]).values[idx])
+
 
 def mywrite(txt, seq):
     with open(txt,'w') as f:
@@ -33,6 +62,45 @@ def writeSeqFilesForMHC(path, pepseq):
     print "{} == {} ".format(sum, len(pepseq))
     return res
 
+
+
+def prepare_for_NetMhcCons(workdir, pepseq, alleles, exe):
+    files = writeSeqFilesForMHC(workdir, pepseq)
+    alllist = gal.AlleleList()
+
+    supportedalleles = alllist.findAll(alleles)
+    commands = []
+    outfiles = []
+    for file in files:
+        for allel in supportedalleles:
+            outfile = os.path.splitext(file)[0]
+            outfile += "_"
+            outfile += allel.replace(":", "_")
+            outfile += ".mhc"
+            outfiles.append(outfile)
+
+            command = "{exe} -inptype 1 -a {allel} -f {file} > {outfile}".format(exe=exe, allel=allel, file=file,
+                                                                                 outfile=outfile)
+            commands.append(command)
+    return outfiles, commands
+
+
+def concat_all_MHCOutputs(outfiles, df):
+    outputs = []
+    for file in outfiles:
+        output2 = pd.read_csv(file, skipinitialspace=True, delimiter=" ", skiprows=range(0, 19) + [20], skipfooter=4,
+                              engine='python')
+        outputs.append(output2)
+
+    allout = pd.concat(outputs)
+    res = df.merge(allout, how='inner', left_on='search_hit', right_on='peptide')
+
+    respiv = pd.pivot_table(res, index=list(df.columns), columns='Allele', values=u'Affinity(nM)')
+    annotation_score_column = respiv.apply(annotation_score, axis=1)
+    top_allele = respiv.apply(getmin_allele, axis=1)
+    respiv['annotation_score'] = annotation_score_column
+    respiv['top_allele'] = top_allele
+    return respiv
 
 
 if __name__ == "__main__":

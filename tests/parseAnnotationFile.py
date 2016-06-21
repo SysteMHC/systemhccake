@@ -1,10 +1,14 @@
 import pandas as pd
-df = pd.read_csv('/home/witold/prog/systeMHC/documentation/input_v2_elife.txt',sep="\t",header=1,skiprows=0)
+import os
 
-df.columns
-df.shape
-print df.head()
 
-for i in df['MHC Allele']:
-    print i.split(',')
+
+path = "{}/SysteMHC_Data/annotation/cleanedTable_id.csv".format(
+    os.environ.get('SYSTEMHC'))
+df = pd.read_csv(path)
+
+
+path = "/mnt/Systemhc/Data/process/1606192042/IprohetPepXML2CSV/"
+
+
 
