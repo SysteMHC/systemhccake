@@ -70,7 +70,7 @@ class NetMHC2(WrappedApp):
         info['NETMHC_OUT'] = []
         for fold in ufold:
             files = [x for x in self.outfiles if os.path.dirname(x) in fold]
-            respiv = pso.concat_all_MHCOutputs(files, self.iprophet)
+            respiv = pso.concat_all_MHC_outputs(files, self.iprophet)
             outfile = os.path.join(fold, 'netmhccons.output.csv')
             respiv.to_csv(outfile, sep="\t")
             info['NETMHC_OUT'] += outfile

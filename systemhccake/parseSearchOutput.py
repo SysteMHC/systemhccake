@@ -85,7 +85,7 @@ def prepare_for_NetMhcCons(workdir, pepseq, alleles, exe):
     return outfiles, commands
 
 
-def concat_all_MHCOutputs(outfiles, df):
+def concat_all_MHC_outputs(outfiles, df):
     outputs = []
     for file in outfiles:
         output2 = pd.read_csv(file, skipinitialspace=True, delimiter=" ", skiprows=range(0, 19) + [20], skipfooter=4,
@@ -96,6 +96,7 @@ def concat_all_MHCOutputs(outfiles, df):
     res = df.merge(allout, how='inner', left_on='search_hit', right_on='peptide')
 
     respiv = pd.pivot_table(res, index=list(df.columns), columns='Allele', values=u'Affinity(nM)')
+
     annotation_score_column = respiv.apply(annotation_score, axis=1)
     top_allele = respiv.apply(getmin_allele, axis=1)
     respiv['annotation_score'] = annotation_score_column

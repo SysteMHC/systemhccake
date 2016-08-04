@@ -40,13 +40,35 @@ class NetMHC(WrappedApp):
     def validate_run(self, log, info, exit_code, stdout):
         check_exitcode(log,exit_code)
 
-        respiv = pso.concat_all_MHCOutputs(self.outfiles, self.df)
-        info['NETMHC_OUT'] = os.path.join(info[Keys.WORKDIR], 'netmhccons.output.csv')
+        respiv = pso.concat_all_MHC_outputs(self.outfiles, self.df)
+        imageloc = os.path.join(info[Keys.WORKDIR], 'heatmap.png')
+        self.plot_heatmap(respiv, imageloc)
 
-        respiv.to_csv(info['NETMHC_OUT'], sep="\t")
+        info['NETMHC_OUT'] = os.path.join(info[Keys.WORKDIR], 'netmhccons.output.csv')
+        respiv.to_csv(info ['NETMHC_OUT'], sep="\t")
 
         # get all the generated outptuts
         return info
+
+    def plot_heatmap(self, respiv, imageloc, weak = 1000):
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+        import numpy as np
+        colnams = respiv.columns[0:-2].tolist()
+        toplot = respiv.ix[:, 0:-2]
+        toplot[toplot > weak] = weak
+        toplot = toplot.sort_values(toplot.columns.tolist())
+
+        fig, ax = plt.subplots()
+        heatmap = ax.pcolor(toplot)
+        ax.set_xticks(np.arange(toplot.shape[1]) + 0.5, minor=False)
+        # ax.xaxis.tick_top()
+        ax.set_xticklabels(colnams, minor=False)
+        plt.colorbar(heatmap)
+        plt.savefig(imageloc)
+        plt.close()
+        #return respiv
 
 
 if __name__ == "__main__":
