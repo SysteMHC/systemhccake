@@ -33,8 +33,8 @@ def getmin_allele(row):
     return ((row.axes[0]).values[idx])
 
 
-def mywrite(txt, seq):
-    with open(txt,'w') as f:
+def mywrite(file, seq):
+    with open(file,'w') as f:
         for item in seq:
             f.write("%s\n" % item)
 
