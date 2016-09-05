@@ -33,7 +33,6 @@ class NetMHC(WrappedApp):
         pepseq = uniqueSeq['search_hit'].tolist()
 
         self.outfiles, commands = pso.prepare_for_NetMhcCons(workdir, pepseq, alleles, exe)
-
         return info, commands
 
 
@@ -44,7 +43,7 @@ class NetMHC(WrappedApp):
         imageloc = os.path.join(info[Keys.WORKDIR], 'heatmap.png')
         self.plot_heatmap(respiv, imageloc)
 
-        info['NETMHC_OUT'] = os.path.join(info[Keys.WORKDIR], 'netmhccons.output.csv')
+        info['NETMHC_OUT'] = os.path.join(info[Keys.WORKDIR], 'netmhccons.output.tsvh')
         respiv.to_csv(info ['NETMHC_OUT'], sep="\t")
 
         # get all the generated outptuts
@@ -72,5 +71,5 @@ class NetMHC(WrappedApp):
 
 
 if __name__ == "__main__":
-    sys.argv = ['--ALLELE_LIST', 'A03,A24,B07,B51', '--PEPCSV', '/home/systemhc/prog/systemhccake/tests/PBMC1_Tubingen.csv']
+    sys.argv = ['--INPUT', '/mnt/Systemhc/Data/process/convert2csv.ini', '--OUTPUT', 'test.ini']
     NetMHC.main()
