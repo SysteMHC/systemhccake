@@ -56,7 +56,7 @@ class NetMHC(WrappedApp):
         info['NETMHC_OUT'] = os.path.join(info[Keys.WORKDIR], 'netmhccons.output.tsvh')
         respiv.to_csv(info['NETMHC_OUT'], sep="\t")
         subprocess.call(
-            ["Rscript", "/home/systemhc/prog/systemhccake/systemhccake/process.r", "--args", info['NETMHC_OUT'],
+            ["Rscript", "{}/systemhccake/systemhccake/process.r".format(os.environ.get('SYSTEMHC')), "--args", info['NETMHC_OUT'],
              info["JOB_ID"]])
         peptide_table = pd.read_csv(os.path.join(info[Keys.WORKDIR], 'final.tsv'), sep="\t")
 
