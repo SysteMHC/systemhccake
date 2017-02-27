@@ -105,32 +105,6 @@ def concat_all_MHC_outputs(outfiles, df):
     return respiv
 
 
-def concat_all_MHC_outputs_wshao(outfiles, df):
-    outputs = []
-    for file in outfiles:
-        output2 = pd.read_csv(file, skipinitialspace=True, delimiter=" ", skiprows=range(0, 19) + [20], skipfooter=4,
-                              engine='python')
-        #print "wenguang: {}".format(output2)
-        outputs.append(output2)
-
-    allout = pd.concat(outputs)
-    res = df.merge(allout, how='inner', left_on='search_hit', right_on='peptide')
-
-    respiv = pd.pivot_table(res, index=list(df.columns), columns='Allele', values=u'Affinity(nM)')
-    #respiv = pd.pivot_table(res, index=list(df.columns), columns='Allele', values='%Rank')
-
-    annotation_score_column = respiv.apply(annotation_score, axis=1)
-    top_allele = respiv.apply(getmin_allele, axis=1)
-    respiv['annotation_score'] = annotation_score_column
-    respiv['top_allele'] = top_allele
-
-    #respiv['SampleID'] = 'Kowalewskid_160207_Rammensee_Germany_PBMC_Buffy18'
-    #cleanedTable_path = "{}/SysteMHC_Data/annotation/cleanedTable_id.csv".format(os.environ.get('SYSTEMHC'))
-    #cleanedTable = pd.read_csv(cleanedTable_path)
-    #respiv_new = respiv.merge(cleanedTable, how='inner', left_on='SampleID', right_on='SampleID')
-
-    return respiv
-
 
 if __name__ == "__main__":
 
