@@ -72,20 +72,15 @@ def process_all_batches(files):
 
 if __name__ == '__main__':
     res = os.environ.get('SYSTEMHC')
-
     if res == None:
         print "SYSTEMHC not set"
         exit(1)
 
-    #xx = "./{}".format('SYSMHC00001_marcillam_160207_marcilla_Spain_C1R_B39')
-    #os.chdir(xx)
-    #print os.getcwd()
-    #netMHCWF.run_libcreate_withNetMHC_WF(nrthreads=4)
-    #exit(0)
-    files = pwconf.getMzXMLFiles("/mnt/Systemhc/data/SYSMHC00001/")
+    dataset = "/mnt/Systemhc/data/SYSMHC00001/"
+    files = pwconf.getMzXMLFiles(dataset)
 
-    thedir = "/mnt/Systemhc/data/SYSMHC00001/analysis"
-    os.chdir(thedir)
+    dataset_result_dir = dataset + "analysis"
+    os.chdir(dataset_result_dir)
     process_all_batches(files)
 
 
